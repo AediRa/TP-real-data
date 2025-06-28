@@ -41,5 +41,7 @@
         <?php } ?>
     </ul>
 
+    <a href="formulaire.php">Formulaire</a>
+
 </body>
 </html>

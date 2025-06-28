@@ -28,4 +28,22 @@
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }
+
+    function getFormulaire($data){
+        $code="SELECT * FROM current_dept_emp join employees on employees.emp_no=current_dept_emp.emp_no join departments on departments.dept_no=current_dept_emp.dept_no LIMIT 20, 10";
+        $resultat = mysqli_query($data, $code);
+        return $resultat;
+    }
+
+    function getDepartments($data){
+        $code="SELECT * FROM departments";
+        $resultat = mysqli_query($data, $code);
+        return $resultat;
+    }
+
+    function get_Employees($data){
+        $code="SELECT * FROM employees LIMIT 20";
+        $resultat = mysqli_query($data, $code);
+        return $resultat;
+    }
 ?>
