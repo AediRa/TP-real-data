@@ -1,0 +1,45 @@
+<?php
+    session_start();
+    include("../INC/fonction.php");
+    include("data.php");
+    $id_emp = $_SESSION['id_emp'];
+    $result = getFiche($data,$id_emp);
+    $donnee = mysqli_fetch_assoc($result);
+    $salaire = getSalaries($data,$id_emp);
+    $title = getTitle($data,$id_emp);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css-2/style.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <script src="../assets/js/bootstrap.bundle.min.js.map"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>first_name : <?= $donnee['first_name'] ?></p>
+    <p>last_name : <?= $donnee['last_name'] ?></p>
+    <p>gender : <?= $donnee['gender'] ?></p>
+    <p>birth_date : <?= $donnee['birth_date'] ?></p>
+    <p>title : <?= $donnee['title'] ?></p>
+    <p>salary : <?= $donnee['salary'] ?></p>
+
+    <h3>salary</h3>
+    <ul>
+        <?php while($donnee1 = mysqli_fetch_assoc($salaire)) { ?>
+            <li><?= $donnee1['salary'] ?> (<?= $donnee1['from_date'] ?> / <?= $donnee1['to_date'] ?> )</li>
+        <?php } ?>
+    </ul>
+
+    <h3>title</h3>
+    <ul>
+        <?php while($donnee2 = mysqli_fetch_assoc($title)) { ?>
+            <li><?= $donnee2['title'] ?> (<?= $donnee2['from_date'] ?> / <?= $donnee2['to_date'] ?> )</li>
+        <?php } ?>
+    </ul>
+
+</body>
+</html>
