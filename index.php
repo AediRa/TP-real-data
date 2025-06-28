@@ -1,3 +1,3 @@
 <?php
-    header("Location: pages/tb_Departement.php");
+    header("Location: pages/tb_Department.php");
 ?>
