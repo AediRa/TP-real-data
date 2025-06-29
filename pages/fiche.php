@@ -19,29 +19,29 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <p>first_name : <?= $donnee['first_name'] ?></p>
-    <p>last_name : <?= $donnee['last_name'] ?></p>
-    <p>gender : <?= $donnee['gender'] ?></p>
-    <p>birth_date : <?= $donnee['birth_date'] ?></p>
-    <p>title : <?= $donnee['title'] ?></p>
-    <p>salary : <?= $donnee['salary'] ?></p>
+    <div class="container-fluid">
+        <p>first_name : <?= $donnee['first_name'] ?></p>
+        <p>last_name : <?= $donnee['last_name'] ?></p>
+        <p>gender : <?= $donnee['gender'] ?></p>
+        <p>birth_date : <?= $donnee['birth_date'] ?></p>
+        <p>title : <?= $donnee['title'] ?></p>
+        <p>salary : <?= $donnee['salary'] ?></p>
 
-    <h3>historique du salary</h3>
-    <ul>
-        <?php while($donnee1 = mysqli_fetch_assoc($salaire)) { ?>
-            <li><?= $donnee1['salary'] ?> (<?= $donnee1['from_date'] ?> / <?= $donnee1['to_date'] ?> )</li>
-        <?php } ?>
-    </ul>
+        <h3>historique du salary</h3>
+        <ul>
+            <?php while($donnee1 = mysqli_fetch_assoc($salaire)) { ?>
+                <li><?= $donnee1['salary'] ?> (<?= $donnee1['from_date'] ?> / <?= $donnee1['to_date'] ?> )</li>
+            <?php } ?>
+        </ul>
 
-    <h3>historique de l'emploi</h3>
-    <ul>
-        <?php while($donnee2 = mysqli_fetch_assoc($title)) { ?>
-            <li><?= $donnee2['title'] ?> (<?= $donnee2['from_date'] ?> / <?= $donnee2['to_date'] ?> )</li>
-        <?php } ?>
-    </ul>
+        <h3>historique de l'emploi</h3>
+        <ul>
+            <?php while($donnee2 = mysqli_fetch_assoc($title)) { ?>
+                <li><?= $donnee2['title'] ?> (<?= $donnee2['from_date'] ?> / <?= $donnee2['to_date'] ?> )</li>
+            <?php } ?>
+        </ul>
 
-    <a href="formulaire.php">Formulaire</a>
-
+        <a href="formulaire.php">Formulaire</a>
+    </div>
 </body>
 </html>

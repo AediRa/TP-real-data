@@ -17,11 +17,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h3><?= $name_dept ?></h3>
-    <ul>
-        <?php while($donnee = mysqli_fetch_assoc($result)) { ?>
-            <li><a href="../INC/traitement/traitement_emp.php?id_emp=<?= $donnee['emp_no'] ?>"><?= $donnee['first_name'] ?> <?= $donnee['last_name'] ?></a></li>
-        <?php } ?>
-    </ul>
+    <div class="container-fluid">
+        <h3><?= $name_dept ?></h3>
+        <ul>
+            <?php while($donnee = mysqli_fetch_assoc($result)) { ?>
+                <li><a href="../INC/traitement/traitement_emp.php?id_emp=<?= $donnee['emp_no'] ?>"><?= $donnee['first_name'] ?> <?= $donnee['last_name'] ?></a></li>
+            <?php } ?>
+        </ul>
+    </div>
 </body>
 </html>
