@@ -12,7 +12,7 @@
     }
 
     function getFiche($data,$id_emp){
-        $code="SELECT * FROM employees join titles on employees.emp_no=titles.emp_no join salaries on employees.emp_no=salaries.emp_no where employees.emp_no='$id_emp'";
+        $code="SELECT * FROM dept_emp_latest_date join titles on dept_emp_latest_date.emp_no=titles.emp_no join salaries on dept_emp_latest_date.emp_no=salaries.emp_no join employees on employees.emp_no=dept_emp_latest_date.emp_no  where employees.emp_no='$id_emp' and dept_emp_latest_date.to_date=titles.to_date and dept_emp_latest_date.to_date=salaries.to_date";
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }

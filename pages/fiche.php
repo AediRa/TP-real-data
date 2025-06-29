@@ -27,14 +27,14 @@
     <p>title : <?= $donnee['title'] ?></p>
     <p>salary : <?= $donnee['salary'] ?></p>
 
-    <h3>salary</h3>
+    <h3>historique du salary</h3>
     <ul>
         <?php while($donnee1 = mysqli_fetch_assoc($salaire)) { ?>
             <li><?= $donnee1['salary'] ?> (<?= $donnee1['from_date'] ?> / <?= $donnee1['to_date'] ?> )</li>
         <?php } ?>
     </ul>
 
-    <h3>title</h3>
+    <h3>historique du title</h3>
     <ul>
         <?php while($donnee2 = mysqli_fetch_assoc($title)) { ?>
             <li><?= $donnee2['title'] ?> (<?= $donnee2['from_date'] ?> / <?= $donnee2['to_date'] ?> )</li>
