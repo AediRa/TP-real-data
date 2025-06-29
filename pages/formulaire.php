@@ -15,6 +15,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h5>Formulaire</h5>
     <form action="../INC/traitement/traitement_formulaire.php">
         <select name="departement">
             <?php while($donnee1 = mysqli_fetch_assoc($dept)) { ?>

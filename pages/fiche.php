@@ -34,7 +34,7 @@
         <?php } ?>
     </ul>
 
-    <h3>historique du title</h3>
+    <h3>historique de l'emploi</h3>
     <ul>
         <?php while($donnee2 = mysqli_fetch_assoc($title)) { ?>
             <li><?= $donnee2['title'] ?> (<?= $donnee2['from_date'] ?> / <?= $donnee2['to_date'] ?> )</li>
