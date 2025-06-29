@@ -41,8 +41,8 @@
         return $resultat;
     }
 
-    function get_Employees($data){
-        $code="SELECT * FROM employees LIMIT 20";
+    function getEmp($data,$val){
+        $code="SELECT * FROM employees LIMIT $val,10";
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }
