@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     session_start();
     include("../INC/fonction.php");
     include("data.php");
@@ -12,17 +13,7 @@
     $emp = getEmp($data,$val);
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css-2/style.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <script src="../assets/js/bootstrap.bundle.min.js.map"></script>
-    <title>Document</title>
-</head>
-<body>
+
 <div class="container-fluid">  
 
     <div class="row p-3">
@@ -94,5 +85,9 @@
     </div>   
 
 </div>
-</body>
-</html>
+
+<?php
+    $nav="ok";
+    $contenu = ob_get_clean();
+    include("html.php");
+?>
