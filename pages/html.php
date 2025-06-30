@@ -23,7 +23,7 @@
         <?php if(isset($nav)) { ?>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a href="tb_Departement.php">Departement</a>
+                    <a href="tb_Department.php">Departement</a>
                     <a href="formulaire.php">Formulaire</a>
                 </div>
             </nav>
