@@ -8,15 +8,19 @@
     $age_min = $_SESSION['agemin'];
     $age_max = $_SESSION['agemax'];
 
+    $page = getResult_NbEmployees($data,$emp,$dept,$age_max,$age_min);
     $result = getResult_Employees($data,$emp,$dept,$age_max,$age_min);
+    
 ?>
 
+<h3>Nombre de resultat : <?= $page ?></h3>
 <?php
     while($donnee = mysqli_fetch_assoc($result)) { 
 ?>
-    <p><?= $donnee['first_name'] ?></p>
-    <p><?= $donnee['dept_name'] ?></p>
-    <p><?= $donnee['birth_date'] ?></p>
+    <p>
+        Nom : <?= $donnee['first_name'] ?> <?= $donnee['last_name'] ?><br>
+        Emploi : <?= $donnee['title'] ?>
+    </p>
 <?php
     }
 ?>
