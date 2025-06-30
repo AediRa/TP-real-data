@@ -1,0 +1,1 @@
+SELECT * FROM dept_emp join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where employees.first_name="Kyoichi" and departments.dept_name="Human Resources" and 50>1 and 50<99;
