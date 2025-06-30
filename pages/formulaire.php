@@ -29,9 +29,9 @@
 
                             <div class="row-md-4 p-3">
                                 <p>nom employé :</p>
-                                <select name="nom employé">
+                                <select >
                                     <?php while($donnee2 = mysqli_fetch_assoc($emp)) { ?>
-                                        <option value="<?= $donnee2['first_name'] ?>">
+                                        <option name="nom employé" value="<?= $donnee2['first_name'] ?>">
                                             <?= $donnee2['first_name'] ?>
                                         </option>
                                     <?php } ?>
