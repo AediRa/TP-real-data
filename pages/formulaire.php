@@ -17,12 +17,25 @@
 
                 <form action="../INC/traitement/traitement_formulaire.php" method="post">
 
-                    <p>Nom : <input type="text" name="employe"></p>
-                    <p>Departement : <input type="text" name="departement"></p>
-                    <p>Age min : <input type="number" name="agemin"></p>
-                    <p>Age max : <input type="number" name="agemax"></p>
-                    <p><input type="submit" value="valider"></p>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Nom</label>
+                        <input type="text" class="form-control" name="employe" placeholder="Georgi">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Departement</label>
+                        <input type="text" class="form-control" name="departement" placeholder="Marketing">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Age min</label>
+                        <input type="number" class="form-control" name="agemin" placeholder="50">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Age max</label>
+                        <input type="number" class="form-control" name="agemax" placeholder="60">
+                    </div>
                     
+                    <button type="submit" class="btn btn-primary">valider</button>
+
                 </form>
 
         </div>
