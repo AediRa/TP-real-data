@@ -11,7 +11,7 @@
         header("Location: ../../pages/formulaire.php");
     }
 
-    if(isset($_POST['nom employé']) && isset($_POST['departement']) && isset($_POST['age min']) && isset($_POST['age max']) &&){
+    if(isset($_POST['nom employé']) && isset($_POST['departement']) && isset($_POST['age min']) && isset($_POST['age max'])){
         $_SESSION['nom employé'] = $_POST['nom employé'];
         $_SESSION['departement'] = $_POST['departement'];
         $_SESSION['age min'] = $_POST['age min'];
