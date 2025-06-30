@@ -24,7 +24,7 @@
 
         <div class="col-md-3 m-3 bg-secondary rounded-3">
 
-                <form action="../INC/traitement/traitement_formulaire.php" method="post">
+                <form action="../INC/traitement/traitement_formulaire.php" method="POST">
                     <div class="col-md-12 m-3 p-3">
 
                             <div class="row-md-4 p-3">
