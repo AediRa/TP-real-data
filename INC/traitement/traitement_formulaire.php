@@ -17,10 +17,7 @@
         $_SESSION['age min'] = $_POST['age min'];
         $_SESSION['age max'] = $_POST['age max'];
 
-        echo($_POST['nom employé']);
-        echo($_POST['departement']);
-        echo($_POST['age min']);
-        echo($_POST['age max']);
+        header("Location: ../../pages/result.php");
     }
 
 ?>
