@@ -7,8 +7,8 @@
 
     <table class="table">
         <tr>
-            <th>dept_name</th>
-            <th>mg_name</th>
+            <th>Departement</th>
+            <th>Manager</th>
         </tr>
         
             <?php while($donnee = mysqli_fetch_assoc($result)) { ?>
