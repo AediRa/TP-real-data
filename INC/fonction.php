@@ -42,7 +42,7 @@
     }
 
     function getEmp($data,$val){
-        $code="SELECT * FROM employees LIMIT $val,10";
+        $code="SELECT * FROM employees LIMIT $val,20";
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }
