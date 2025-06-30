@@ -29,24 +29,6 @@
         return $resultat;
     }
 
-    function getFormulaire($data){
-        $code="SELECT * FROM current_dept_emp join employees on employees.emp_no=current_dept_emp.emp_no join departments on departments.dept_no=current_dept_emp.dept_no LIMIT 20, 10";
-        $resultat = mysqli_query($data, $code);
-        return $resultat;
-    }
-
-    function getDepartments($data){
-        $code="SELECT * FROM departments";
-        $resultat = mysqli_query($data, $code);
-        return $resultat;
-    }
-
-    function getEmp($data,$val){
-        $code="SELECT * FROM employees LIMIT $val,20";
-        $resultat = mysqli_query($data, $code);
-        return $resultat;
-    }
-
     function getage($data,$birth){
         $code = "SELECT TIMESTAMPDIFF(YEAR, '$birth', CURDATE()) AS age";
         $resultat = mysqli_query($data, $code);
@@ -54,13 +36,13 @@
         return $age['age'];
     }
 
-    function getResult_Employees($data,$nom,$dept,$age_max,$age_min){
+    function getResult_Employees($data,$nom,$dept,$age_max,$age_min,$val){
         $code1="SELECT birth_date FROM employees where employees.first_name='$nom'";
         $resultat1 = mysqli_query($data, $code1);
         $anniv = mysqli_fetch_assoc($resultat1);
         $age = getage($data,$anniv['birth_date']);
 
-        $code="SELECT * FROM dept_emp join titles on titles.emp_no=dept_emp.emp_no join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where employees.first_name='$nom' and departments.dept_name='$dept' and $age>'$age_min' and $age<'$age_max'";
+        $code="SELECT * FROM dept_emp join titles on titles.emp_no=dept_emp.emp_no join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where employees.first_name='$nom' and departments.dept_name='$dept' and $age>'$age_min' and $age<'$age_max' LIMIT $val,20";
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }
