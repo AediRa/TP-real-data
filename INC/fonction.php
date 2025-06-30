@@ -46,4 +46,10 @@
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }
+
+    function getResult_Employees($data,$nom,$dept,$age_max,$age_min){
+        $code="SELECT * FROM dept_emp join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where employees.first_name='$nom' and departments.dept_name='$dept' and employees.birth_date - now()>'$age_min' and employees.birth_date - now()>'$age_max'";
+        $resultat = mysqli_query($data, $code);
+        return $resultat;
+    }
 ?>
