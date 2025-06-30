@@ -47,9 +47,22 @@
         return $resultat;
     }
 
+    function getage($birth){
+        $code = "SELECT TIMESTAMDIFF (YAER,'$birth',CURDATE()) AS age ";
+        $resultat = mysqli_query($data, $code);
+        $age = mysqli_fetch_assoc($resultat);
+        return $age['age'];
+    }
+
     function getResult_Employees($data,$nom,$dept,$age_max,$age_min){
-        $code="SELECT * FROM dept_emp join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where employees.first_name='$nom' and departments.dept_name='$dept' and employees.birth_date - now()>'$age_min' and employees.birth_date - now()>'$age_max'";
+        $code1="SELECT birth_date FROM employees where employees.first_name='$nom'";
+        $resultat1 = mysqli_query($data, $code1);
+        $anniv = mysqli_fetch_assoc($resultat1);
+        $age = getage($anniv['birth_date']);
+
+        $code="SELECT * FROM dept_emp join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where employees.first_name='$nom' and departments.dept_name='$dept' and $age>'$age_min' and $age<'$age_max'";
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }
+
 ?>
