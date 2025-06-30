@@ -24,7 +24,7 @@
 
         <div class="col-md-3 m-3 bg-secondary rounded-3">
 
-                <form action="../INC/traitement/traitement_formulaire.php">
+                <form action="../INC/traitement/traitement_formulaire.php" method="post">
                     <div class="col-md-12 m-3 p-3">
 
                             <div class="row-md-4 p-3">
@@ -64,7 +64,7 @@
 
                             <div class="row-md-4 p-3">
                                 <p>age max :</p>
-                                <select name="age max" id="">
+                                <select name="age max">
                                     <?php for($i=1;$i<100;$i++) { ?>
                                         <option value="<?= $i ?>">
                                             <?= $i ?>
