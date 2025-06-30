@@ -29,7 +29,7 @@
 
                             <div class="row-md-4 p-3">
                                 <p>nom employé :</p>
-                                <select name="nom employé">
+                                <select name="nom employé" id="nom employé">
                                     <?php while($donnee2 = mysqli_fetch_assoc($emp)) { ?>
                                         <option value="<?= $donnee2['first_name'] ?>">
                                             <?= $donnee2['first_name'] ?>
@@ -42,7 +42,7 @@
 
                             <div class="row-md-4 p-3">
                                 <p>departement :</p>
-                                <select name="departement">
+                                <select name="departement" id="departement">
                                     <?php while($donnee1 = mysqli_fetch_assoc($dept)) { ?>
                                         <option value="<?= $donnee1['dept_name'] ?>">
                                             <?= $donnee1['dept_name'] ?>
@@ -53,7 +53,7 @@
 
                             <div class="row-md-4 p-3">
                                 <p>age min :</p>
-                                <select name="age min">
+                                <select name="age min" id="age min">
                                     <?php for($i=1;$i<100;$i++) { ?>
                                         <option value="<?= $i ?>">
                                             <?= $i ?>
@@ -64,7 +64,7 @@
 
                             <div class="row-md-4 p-3">
                                 <p>age max :</p>
-                                <select name="age max">
+                                <select name="age max" id="age max">
                                     <?php for($i=1;$i<100;$i++) { ?>
                                         <option value="<?= $i ?>">
                                             <?= $i ?>
