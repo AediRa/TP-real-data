@@ -1,19 +1,10 @@
 <?php
+    ob_start();
     include("data.php");
     include("../INC/fonction.php");
     $result = getDepartment($data);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css-2/style.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <script src="../assets/js/bootstrap.bundle.min.js.map"></script>
-    <title>Document</title>
-</head>
-<body>
+
     <table class="table">
         <tr>
             <th>dept_name</th>
@@ -28,5 +19,9 @@
             <?php } ?>
         
     </table>
-</body>
-</html>
+
+<?php
+    $nav="ok";
+    $contenu = ob_get_clean();
+    include("html.php");
+?>
