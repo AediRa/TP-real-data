@@ -3,10 +3,10 @@
     session_start();
     include("../INC/fonction.php");
     include("data.php");
-    $emp = $_SESSION['nom employé'];
+    $emp = $_SESSION['employe'];
     $dept = $_SESSION['departement'];
-    $age_min = $_SESSION['age min'];
-    $age_max = $_SESSION['age max'];
+    $age_min = $_SESSION['agemin'];
+    $age_max = $_SESSION['agemax'];
 ?>
 
 <p><?= $emp ?></p>

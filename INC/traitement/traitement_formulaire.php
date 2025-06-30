@@ -11,11 +11,11 @@
         header("Location: ../../pages/formulaire.php");
     }
 
-    if(isset($_POST['nom employé']) && isset($_POST['departement']) && isset($_POST['age min']) && isset($_POST['age max'])){
-        $_SESSION['nom employé'] = $_POST['nom employé'];
+    if(isset($_POST['employe']) && isset($_POST['departement']) && isset($_POST['agemin']) && isset($_POST['agemax'])){
+        $_SESSION['employe'] = $_POST['employe'];
         $_SESSION['departement'] = $_POST['departement'];
-        $_SESSION['age min'] = $_POST['age min'];
-        $_SESSION['age max'] = $_POST['age max'];
+        $_SESSION['agemin'] = $_POST['agemin'];
+        $_SESSION['agemax'] = $_POST['agemax'];
 
         header("Location: ../../pages/result.php");
     }
