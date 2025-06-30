@@ -24,9 +24,7 @@
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a href="tb_Departement.php">Departement</a>
-                    <a href="tb_Emp.php">Employees</a>
                     <a href="formulaire.php">Formulaire</a>
-                    <a href="fiche.php">Fiche</a>
                 </div>
             </nav>
         <?php } ?>
