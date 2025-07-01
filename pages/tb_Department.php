@@ -9,12 +9,14 @@
         <tr>
             <th>Departement</th>
             <th>Manager</th>
+            <th>Nombre d'employe</th>
         </tr>
         
             <?php while($donnee = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><a href="../INC/traitement/traitement_dept.php?id_dept=<?= $donnee['dept_no'] ?>&&name_dept=<?= $donnee['dept_name'] ?>"><?= $donnee['dept_name'] ?></a></td>
                     <td><?= $donnee['first_name'] ?></td>
+                    <td><?= $donnee['count(*)'] ?></td>
                 </tr>
             <?php } ?>
         
