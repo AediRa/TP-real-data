@@ -18,7 +18,7 @@
         <p>title : <?= $donnee['title'] ?></p>
         <p>salary : <?= $donnee['salary'] ?></p>
 
-        <h3>historique du salary</h3>
+        <h3>historique du salaire</h3>
         <ul>
             <?php while($donnee1 = mysqli_fetch_assoc($salaire)) { ?>
                 <li><?= $donnee1['salary'] ?> (<?= $donnee1['from_date'] ?> / <?= $donnee1['to_date'] ?> )</li>
