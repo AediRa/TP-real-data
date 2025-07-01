@@ -26,10 +26,10 @@
                 <div class="container-fluid">
                     
                     <div class="collapse navbar-collapse">
-                        <div class="navbar-nav">
+                        <div class="navbar-nav btn-group">
                             
-                            <a class="m-2" href="tb_Department.php">Departement</a>
-                            <a class="m-2" href="formulaire.php">Formulaire</a>
+                            <a class="m-2 btn btn-primary" href="tb_Department.php">Departement</a>
+                            <a class="m-2 btn btn-primary" href="formulaire.php">Formulaire</a>
                 
                         </div>
                     </div>
