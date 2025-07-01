@@ -5,10 +5,17 @@
         return $resultat;
     }
 
-    function getEmployees($data,$id_dept){
-        $code="SELECT * FROM dept_emp join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where departments.dept_no='$id_dept' and dept_emp.to_date > now()";
+    function getEmployees($data,$id_dept,$val){
+        $code="SELECT * FROM dept_emp join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where departments.dept_no='$id_dept' and dept_emp.to_date > now() LIMIT $val,20";
         $resultat = mysqli_query($data, $code);
         return $resultat;
+    }
+
+    function getNbEmployees($data,$id_dept){
+        $code="SELECT count(*) FROM dept_emp join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where departments.dept_no='$id_dept' and dept_emp.to_date > now()";
+        $resultat = mysqli_query($data, $code);
+        $nb = mysqli_fetch_assoc($resultat);
+        return $nb['count(*)'];
     }
 
     function getFiche($data,$id_emp){

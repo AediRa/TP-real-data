@@ -47,7 +47,11 @@
                     <li class="page-item">
                         <a class="page-link" href="#">
 
+                            <?php if() { ?>
+
                                 <?= $i + 1 ?>
+
+                            <?php } ?>
 
                         </a>
                     </li>
@@ -63,6 +67,8 @@
 
         <a href="tb_Department.php">Retour</a>
     </div>
+
+    <?= $page ?> <?= $ligne ?> <?= $val ?>
 
 <?php
     $nav="ok";

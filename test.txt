@@ -1,1 +1,50 @@
 SELECT * FROM dept_emp join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where employees.first_name="Kyoichi" and departments.dept_name="Human Resources" and 50>1 and 50<99;
+
+<nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <?php 
+                // Calcul de la page actuelle basée sur le OFFSET ($val)
+                $currentPage = floor($val / $itemsPerPage) + 1; // La page commence à 1
+                $maxPagesToShow = 5; // Nombre maximum de numéros de page à afficher (ex: 1|2|...|622 ici, ou 3|4|5|6|7)
+
+                // Détermine la page de début et de fin pour les numéros de page à afficher.
+                // Cela centre les numéros de page autour de la page actuelle.
+                $startPage = max(1, $currentPage - floor($maxPagesToShow / 2));
+                $endPage = min($page, $startPage + $maxPagesToShow - 1);
+
+                // Ajuste le début si nous sommes trop près de la fin (pour toujours afficher $maxPagesToShow numéros si possible)
+                if ($endPage - $startPage + 1 < $maxPagesToShow) {
+                    $startPage = max(1, $endPage - $maxPagesToShow + 1);
+                }
+                ?>
+
+                <?php if($val > 0) { // N'affiche le bouton "Previous" que si nous ne sommes pas sur la première page ?>
+                <li class="page-item"><a class="page-link" href="tb_Emp.php?val=<?= $val - $itemsPerPage ?>">Previous</a></li>
+                <?php } ?>
+
+                <?php if ($startPage > 1) { ?>
+                    <li class="page-item"><a class="page-link" href="tb_Emp.php?val=0">1</a></li>
+                    <?php if ($startPage > 2) { // Si la page de début est supérieure à 2, afficher "..." ?>
+                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                    <?php } ?>
+                <?php } ?>
+
+                <?php for($i = $startPage; $i <= $endPage; $i++) { ?>
+                    <li class="page-item <?= ($i == $currentPage) ? 'active' : '' ?>"> <a class="page-link" href="tb_Emp.php?val=<?= ($i - 1) * $itemsPerPage ?>">
+                            <?= $i ?>
+                        </a>
+                    </li>
+                <?php } ?>
+
+                <?php if ($endPage < $page) { ?>
+                    <?php if ($endPage < $page - 1) { // Si la page de fin est inférieure à la dernière page - 1, afficher "..." ?>
+                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                    <?php } ?>
+                    <li class="page-item"><a class="page-link" href="tb_Emp.php?val=<?= ($page - 1) * $itemsPerPage ?>"><?= $page ?></a></li>
+                <?php } ?>
+
+                <?php if($val + $itemsPerPage < $ligne) { // N'affiche le bouton "Next" que si nous ne sommes pas sur la dernière page ?>
+                <li class="page-item"><a class="page-link" href="tb_Emp.php?val=<?= $val + $itemsPerPage ?>">Next</a></li>
+                <?php } ?>
+            </ul>
+        </nav>
