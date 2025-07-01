@@ -8,9 +8,10 @@ CREATE OR REPLACE VIEW v_IdDept_NbEmp AS
 SELECT id_dept,count(*) as nb_empBydept from v_dept_deptEmp_Emp group by id_dept;
 
 CREATE OR REPLACE VIEW v_NbF AS
-SELECT gender,count(*) FROM v_dept_deptEmp_Emp where gender="F";
+SELECT gender,count(*) as NbF FROM v_dept_deptEmp_Emp where gender="F";
 
 CREATE OR REPLACE VIEW v_NbM AS
-SELECT gender,count(*) FROM v_dept_deptEmp_Emp where gender="M";
+SELECT gender,count(*) as NbM FROM v_dept_deptEmp_Emp where gender="M";
 
-select sum(nb_empBydept) from v_IdDept_NbEmp;
+CREATE OR REPLACE VIEW v_SalaryByEmpl AS
+SELECT title,AVG(salary) from v_dept_deptEmp_Emp join titles on titles.emp_no = v_dept_deptEmp_Emp.id_emp join salaries on salaries.emp_no = v_dept_deptEmp_Emp.id_emp group by titles.title;
