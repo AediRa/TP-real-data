@@ -21,12 +21,22 @@
 
     <header>
         <?php if(isset($nav)) { ?>
+
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a href="tb_Department.php">Departement</a>
-                    <a href="formulaire.php">Formulaire</a>
+                    
+                    <div class="collapse navbar-collapse">
+                        <div class="navbar-nav">
+                            
+                            <a class="m-2" href="tb_Department.php">Departement</a>
+                            <a class="m-2" href="formulaire.php">Formulaire</a>
+                
+                        </div>
+                    </div>
+                    
                 </div>
             </nav>
+
         <?php } ?>
     </header>
 
