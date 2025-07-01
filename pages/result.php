@@ -1,4 +1,5 @@
 <?php
+
     ob_start();
     session_start();
     include("../INC/fonction.php");
@@ -52,7 +53,7 @@
             <?php } ?>
 
             <?php for($i=0;$i<$page;$i++) { ?>
-                <li class="page-item"><a class="page-link" href="#"><?= $i ?></a></li>
+                <li class="page-item"><a class="page-link" href="#"><?= $i + 1 ?></a></li>
             <?php } ?>
 
             <?php if($val + $page != $ligne) { ?>
