@@ -31,7 +31,9 @@
     </header>
 
     <main>
-        <?= $content ?>
+        <div class="container-fluid">
+            <?= $content ?>
+        </div>
     </main>
 
     <footer>
