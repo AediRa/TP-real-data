@@ -103,4 +103,13 @@
         return number_format($nb, 0, '', ' ');
     }
 
+    function getCorrectGenre($genre){
+        if($genre == "F"){
+            return "femme";
+        }
+        if($genre == "M"){
+            return "homme";
+        }
+    }
+
 ?>

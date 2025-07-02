@@ -32,7 +32,7 @@
 
         <ul>
             <?php while($donnee = mysqli_fetch_assoc($result)) { ?>
-                <li><a href="../INC/traitement/traitement_emp.php?id_emp=<?= $donnee['emp_no'] ?>"><?= $donnee['first_name'] ?> <?= $donnee['last_name'] ?></a></li>
+                <li><a class="a-no-effect" href="../INC/traitement/traitement_emp.php?id_emp=<?= $donnee['emp_no'] ?>"><?= $donnee['first_name'] ?> <?= $donnee['last_name'] ?></a></li>
             <?php } ?>
         </ul>
 

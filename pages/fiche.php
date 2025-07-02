@@ -11,12 +11,13 @@
 ?>
 
     <div class="container-fluid">
-        <p>first_name : <?= $donnee['first_name'] ?></p>
-        <p>last_name : <?= $donnee['last_name'] ?></p>
-        <p>gender : <?= $donnee['gender'] ?></p>
-        <p>birth_date : <?= getCorrectDate($donnee['birth_date']) ?></p>
-        <p>title : <?= $donnee['title'] ?></p>
-        <p>salary : <?= getCorrectSalaire($donnee['salary']) ?></p>
+        <h3>Fiche de <?= $donnee['last_name'] ?></h3>
+        <p>Nom : <?= $donnee['last_name'] ?></p>
+        <p>Prenom : <?= $donnee['first_name'] ?></p>
+        <p>Genre : <?= getCorrectGenre($donnee['gender']) ?></p>
+        <p>Date de naissance : <?= getCorrectDate($donnee['birth_date']) ?></p>
+        <p>Emploi : <?= $donnee['title'] ?></p>
+        <p>Salaire : <?= getCorrectSalaire($donnee['salary']) ?></p>
 
         <h3>historique du salaire</h3>
         <table class="table">

@@ -1,4 +1,8 @@
 .a-no-effect {
-    text-decoration: none; 
-    color: inherit;        
+    text-decoration: none;         
+}
+
+.fixnav {
+    position: fixed;
+    top: 0;
 }
