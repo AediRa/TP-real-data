@@ -16,7 +16,7 @@
                 <tr>
                     <td><a href="../INC/traitement/traitement_dept.php?id_dept=<?= $donnee['dept_no'] ?>&&name_dept=<?= $donnee['dept_name'] ?>"><?= $donnee['dept_name'] ?></a></td>
                     <td><?= $donnee['first_name'] ?></td>
-                    <td><?= $donnee['nb_empBydept'] ?></td>
+                    <td><?= getCorrectNb($donnee['nb_empBydept']) ?></td>
                 </tr>
             <?php } ?>
         

@@ -84,4 +84,23 @@
         return $resultat;
     }
 
+    function getCorrectDate($date) {
+        $d_date = new DateTime($date);
+        $now = new DateTime();
+    
+        if ($d_date > $now) {
+            return $now->format('d-m-Y'); 
+        }
+    
+        return $d_date->format('d-m-Y');
+    }
+
+    function getCorrectSalaire($salaire){
+        return number_format($salaire, 2, ',', ' ') . ' €';
+    }
+
+    function getCorrectNb($nb){
+        return number_format($nb, 0, '', ' ');
+    }
+
 ?>

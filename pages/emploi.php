@@ -11,8 +11,8 @@
     $sbe = getSalaireByEmploi($data);
 ?>
 
-<p>Nombre de femme : <?= $donnee1['NbF'] ?></p>
-<p>Nombre d'homme : <?= $donnee2['NbM'] ?></p>
+<p>Nombre de femme : <?= getCorrectNb($donnee1['NbF']) ?></p>
+<p>Nombre d'homme : <?= getCorrectNb($donnee2['NbM']) ?></p>
 
 <table class="table">
     <tr>
@@ -23,7 +23,7 @@
     <?php while($donnee3 = mysqli_fetch_assoc($sbe)) { ?>
         <tr>
             <td><?= $donnee3['title'] ?></td>
-            <td><?= $donnee3['salary'] ?></td>
+            <td><?= getCorrectSalaire($donnee3['salary']) ?></td>
         </tr>
     <?php } ?>
     
