@@ -61,10 +61,10 @@
             </ul>
         </nav>
 
-        <a href="tb_Department.php">Retour</a>
     </div>
 
 <?php
+    $return = "tb_Department.php";
     $contenu = ob_get_clean();
     include("html.php");
 ?>

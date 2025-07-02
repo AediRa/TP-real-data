@@ -67,9 +67,8 @@
 
     <?php } ?>
 
-    <a href="formulaire.php">retour</a>
-
 <?php
+    $return = "formulaire.php";
     $contenu = ob_get_clean();
     include("html.php");
 ?>

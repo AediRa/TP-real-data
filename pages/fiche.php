@@ -54,10 +54,10 @@
 
         </table>
 
-        <a href="tb_Emp.php">Retour</a>
     </div>
 
 <?php
+    $return = "tb_Emp.php";
     $contenu = ob_get_clean();
     include("html.php");
 ?>
