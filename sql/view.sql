@@ -14,4 +14,4 @@ CREATE OR REPLACE VIEW v_NbM AS
 SELECT gender,count(*) as NbM FROM v_dept_deptEmp_Emp where gender="M";
 
 CREATE OR REPLACE VIEW v_SalaryByEmpl AS
-SELECT title,AVG(salary) from v_dept_deptEmp_Emp join titles on titles.emp_no = v_dept_deptEmp_Emp.id_emp join salaries on salaries.emp_no = v_dept_deptEmp_Emp.id_emp group by titles.title;
+SELECT title,AVG(salary) as salary from v_dept_deptEmp_Emp join titles on titles.emp_no = v_dept_deptEmp_Emp.id_emp join salaries on salaries.emp_no = v_dept_deptEmp_Emp.id_emp group by titles.title;

@@ -30,6 +30,7 @@
                             
                             <a class="m-2 btn btn-primary" href="tb_Department.php">Departement</a>
                             <a class="m-2 btn btn-primary" href="formulaire.php">Formulaire</a>
+                            <a class="m-2 btn btn-primary" href="emploi.php">Information</a>
                 
                         </div>
                     </div>

@@ -37,7 +37,7 @@
     }
 
     function getage($data,$birth){
-        $code = "SELECT TIMESTAMPDIFF(YEAR, '$birth', CURDATE()) AS age";
+        $code="SELECT TIMESTAMPDIFF(YEAR, '$birth', CURDATE()) AS age";
         $resultat = mysqli_query($data, $code);
         $age = mysqli_fetch_assoc($resultat);
         return $age['age'];
@@ -64,6 +64,24 @@
         $resultat = mysqli_query($data, $code);
         $nb = mysqli_fetch_assoc($resultat);
         return $nb['count(*)'];
+    }
+
+    function getNbF($data){
+        $code="SELECT * FROM v_NbF";
+        $resultat = mysqli_query($data, $code);
+        return $resultat;
+    }
+
+    function getNbM($data){
+        $code="SELECT * FROM v_NbM";
+        $resultat = mysqli_query($data, $code);
+        return $resultat;
+    }
+
+    function getSalaireByEmploi($data){
+        $code="SELECT * FROM v_SalaryByEmpl";
+        $resultat = mysqli_query($data, $code);
+        return $resultat;
     }
 
 ?>

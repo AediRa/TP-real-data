@@ -28,7 +28,7 @@
 
     <div class="container-fluid">
 
-        <h3>List of employees in the <?= $name_dept ?> department </h3>
+        <h3>Liste des employes dans le departement <?= $name_dept ?> </h3>
 
         <ul>
             <?php while($donnee = mysqli_fetch_assoc($result)) { ?>
@@ -65,7 +65,6 @@
     </div>
 
 <?php
-    $nav="ok";
     $contenu = ob_get_clean();
     include("html.php");
 ?>

@@ -7,7 +7,7 @@
 
     <table class="table">
         <tr>
-            <th>Departement</th>
+            <th>Departements</th>
             <th>Manager</th>
             <th>Nombre d'employe</th>
         </tr>

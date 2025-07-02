@@ -19,24 +19,45 @@
         <p>salary : <?= $donnee['salary'] ?></p>
 
         <h3>historique du salaire</h3>
-        <ul>
+        <table class="table">
+            <tr>
+                <th>salaire</th>
+                <th>debut</th>
+                <th>fin</th>
+            </tr>
+            
             <?php while($donnee1 = mysqli_fetch_assoc($salaire)) { ?>
-                <li><?= $donnee1['salary'] ?> (<?= $donnee1['from_date'] ?> / <?= $donnee1['to_date'] ?> )</li>
+                <tr>
+                    <td><?= $donnee1['salary'] ?></td>
+                    <td><?= $donnee1['from_date'] ?></td>
+                    <td><?= $donnee1['to_date'] ?></td>
+                </tr>
             <?php } ?>
-        </ul>
+            
+        </table>
 
         <h3>historique de l'emploi</h3>
-        <ul>
+        <table class="table">
+            <tr>
+                <th>emploi</th>
+                <th>debut</th>
+                <th>fin</th>
+            </tr>
+            
             <?php while($donnee2 = mysqli_fetch_assoc($title)) { ?>
-                <li><?= $donnee2['title'] ?> (<?= $donnee2['from_date'] ?> / <?= $donnee2['to_date'] ?> )</li>
+                <tr>
+                    <td><?= $donnee2['title'] ?></td>
+                    <td><?= $donnee2['from_date'] ?></td>
+                    <td><?= $donnee2['to_date'] ?> </td>
+                </tr>
             <?php } ?>
-        </ul>
+
+        </table>
 
         <a href="tb_Emp.php">Retour</a>
     </div>
 
 <?php
-    $nav="ok";
     $contenu = ob_get_clean();
     include("html.php");
 ?>
