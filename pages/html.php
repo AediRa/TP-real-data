@@ -22,7 +22,7 @@
     <header>
         <?php if(isset($nav)) { ?>
 
-            <nav class="navbar navbar-expand-lg bg-body-tertiary fixnav">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     
                     <div class="collapse navbar-collapse">
@@ -42,7 +42,7 @@
 
         <?php if(isset($return)) { ?>
 
-            <nav class="navbar navbar-expand-lg bg-body-tertiary fixnav">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     
                     <div class="collapse navbar-collapse">

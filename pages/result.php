@@ -49,8 +49,7 @@
             while($donnee = mysqli_fetch_assoc($result)) { 
         ?>
             <p>
-                Nom : <?= $donnee['first_name'] ?> <?= $donnee['last_name'] ?><br>
-                Emploi : <?= $donnee['title'] ?>
+                Nom : <a class="a-no-effect" href="../INC/traitement/traitement_emp.php?id_emp=<?= $donnee['id_emp'] ?>&&result"><?= $donnee['first_name'] ?> <?= $donnee['last_name'] ?></a><br>
             </p>
         <?php
             }

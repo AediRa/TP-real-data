@@ -54,7 +54,7 @@
         $anniv = mysqli_fetch_assoc($resultat1);
         $age = getage($data,$anniv['birth_date']);
 
-        $code="SELECT * FROM dept_emp join titles on titles.emp_no=dept_emp.emp_no join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where employees.first_name='$nom' and departments.dept_name='$dept' and $age>'$age_min' and $age<'$age_max' LIMIT $val,20";
+        $code="SELECT * FROM v_dept_deptEmp_Emp where v_dept_deptEmp_Emp.first_name='$nom' and v_dept_deptEmp_Emp.dept_name='$dept' and $age>'$age_min' and $age<'$age_max' LIMIT $val,20";
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }
@@ -70,7 +70,7 @@
         $anniv = mysqli_fetch_assoc($resultat1);
         $age = getage($data,$anniv['birth_date']);
 
-        $code="SELECT count(*) FROM dept_emp join titles on titles.emp_no=dept_emp.emp_no join departments on dept_emp.dept_no=departments.dept_no join employees on employees.emp_no=dept_emp.emp_no where employees.first_name='$nom' and departments.dept_name='$dept' and $age>'$age_min' and $age<'$age_max'";
+        $code="SELECT count(*) FROM v_dept_deptEmp_Emp where v_dept_deptEmp_Emp.first_name='$nom' and v_dept_deptEmp_Emp.dept_name='$dept' and $age>'$age_min' and $age<'$age_max'";
         $resultat = mysqli_query($data, $code);
         $nb = mysqli_fetch_assoc($resultat);
         return $nb['count(*)'];

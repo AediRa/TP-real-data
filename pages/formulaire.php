@@ -18,7 +18,7 @@
                 <form action="../INC/traitement/traitement_formulaire.php" method="post">
 
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Nom</label>
+                        <label for="exampleInputPassword1" class="form-label">Prenom</label>
                         <input type="text" class="form-control" name="employe" placeholder="Georgi">
                     </div>
                     <div class="mb-3">
@@ -27,11 +27,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Age min</label>
-                        <input type="number" class="form-control" name="agemin" placeholder="50">
+                        <input type="number" class="form-control" name="agemin" placeholder="1">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Age max</label>
-                        <input type="number" class="form-control" name="agemax" placeholder="60">
+                        <input type="number" class="form-control" name="agemax" placeholder="99">
                     </div>
                     
                     <button type="submit" class="btn btn-primary">valider</button>

@@ -58,7 +58,13 @@
     </div>
 
 <?php
-    $return = "tb_Emp.php";
+    if(!isset($_GET['result'])){
+        $return = "tb_Emp.php";
+    }
+    if(isset($_GET['result'])){
+        $return = "result.php";
+    }
+    
     $contenu = ob_get_clean();
     include("html.php");
 ?>
