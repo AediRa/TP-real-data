@@ -27,13 +27,21 @@
     $result = getResult_Employees($data,$emp,$dept,$age_max,$age_min,$val);
     $reste = 20 - (($page*20) - $ligne);
 
+    $current_page = floor($val / 20) + 1;
+    $total_pages = $page;
+
+    $next_page = $current_page + 1;
+    $last_page = $total_pages;
+
 ?>
 
-    <?php if(!isset($result) && !isset($ligne)){ ?>
-        <h3><?php echo("Aucun correspondant") ?></h3>
-    <?php } ?>
+    <?php if($ligne == false && $result == false){?>
+        <div class="alert alert-warning" role="alert">
+            <h3><?= "Aucun resultat correspondant"?></h3>
+        </div>
+    <?php }?>
 
-    <?php if(isset($result) && isset($ligne)){ ?>
+    <?php if($ligne != false && $result != false){ ?>
 
         <h3>Nombre de resultat : <?= $ligne ?></h3>
 
@@ -53,10 +61,29 @@
                 <?php if($val != 0) { ?>
                 <li class="page-item"><a class="page-link" href="result.php?suivant=<?= $val - 20 ?>">Previous</a></li>
                 <?php } ?>
+                    
+                    <li class="page-item active">
+                        <a class="page-link" href="result.php?suivant=<?=( $current_page  - 1) * 20?>"><?= $current_page ?></a>
+                    </li>
 
-                <?php for($i=0;$i<$page;$i++) { ?>
-                    <li class="page-item"><a class="page-link" href="#"><?= $i + 1 ?></a></li>
-                <?php } ?>
+                    <?php if ($next_page <= $total_pages) { ?>
+                        <li class="page-item">
+                            <a class="page-link" href="result.php?suivant=<?=($next_page - 1) * 20?>"><?= $next_page ?></a>
+                        </li>
+                    <?php }?>
+
+                    <?php if ($next_page + 1 < $last_page) { ?>
+                        <li class="page-item disabled">
+                            <p class="page-link">...</p>
+                        </li>
+                    <?php }?>
+
+                    <?php if ($last_page > $next_page) { ?>
+                        <li class="page-item">
+                            <a class="page-link" href="result.php?suivant=<?=($last_page - 1) * 20?>"><?= $last_page ?></a>
+                        </li>
+                    <?php }?>
+                
 
                 <?php if(($val == 0) || ($val + $reste != $ligne)) { ?>
                     

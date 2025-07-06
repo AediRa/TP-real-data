@@ -46,6 +46,11 @@
     function getResult_Employees($data,$nom,$dept,$age_max,$age_min,$val){
         $code1="SELECT birth_date FROM employees where employees.first_name='$nom'";
         $resultat1 = mysqli_query($data, $code1);
+
+        if (mysqli_num_rows($resultat1) == 0) {
+            return false;
+        }
+
         $anniv = mysqli_fetch_assoc($resultat1);
         $age = getage($data,$anniv['birth_date']);
 
@@ -57,6 +62,11 @@
     function getResult_NbEmployees($data,$nom,$dept,$age_max,$age_min){
         $code1="SELECT birth_date FROM employees where employees.first_name='$nom'";
         $resultat1 = mysqli_query($data, $code1);
+
+        if (mysqli_num_rows($resultat1) == 0) {
+            return false;
+        }
+
         $anniv = mysqli_fetch_assoc($resultat1);
         $age = getage($data,$anniv['birth_date']);
 

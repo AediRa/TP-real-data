@@ -10,7 +10,7 @@
     <div class="row p-3">
 
         <div class="col-md-12 m-3">
-            <h5>Formulaire</h5>
+            <h5>Formulaire de recherche d'employe</h5>
         </div>
 
         <div class="col-md-3 m-3 bg-secondary rounded-3 p-4">
