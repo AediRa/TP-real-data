@@ -3,9 +3,25 @@
     session_start();
     include("../INC/fonction.php");
     include("data.php");
+    $nom_dept = $_SESSION['name_dept'];
+    $id_dept =  $_SESSION['id_dept'];
+    $result = getDept($data,$id_dept);
+    $donnee = mysqli_fetch_assoc($result);
+    $result2 = getlistDept($data,$id_dept);
 ?>
 
 <div class="container-fluid">  
+
+        <table class="table">
+            <tr>
+                <th>Departement</th>
+                <th>Date debut</th>
+            </tr>
+            <tr>
+                <td><?= $nom_dept ?></td>
+                <td><?= getCorrectDate($donnee['from_date']) ?></td>
+            </tr>
+        </table>
 
     <div class="row p-3">
 
@@ -19,7 +35,15 @@
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Departement</label>
-                        <input type="text" class="form-control" name="departement" placeholder="Marketing">
+
+                        <select name="departement">
+                            <?php while($donnee2 = mysqli_fetch_assoc($result2)) { ?>
+                                <option value="<?= $donnee2['dept_name'] ?>">
+                                    <?= $donnee2['dept_name'] ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Date de debut</label>
