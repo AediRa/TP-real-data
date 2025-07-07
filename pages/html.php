@@ -40,7 +40,7 @@
 
         <?php } ?>
 
-        <?php if(isset($return)) { ?>
+        <?php if(isset($return) && isset($departement)) { ?>
 
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
@@ -49,6 +49,7 @@
                         <div class="navbar-nav btn-group">
                             
                             <a class="m-2 btn btn-primary" href="<?= $return ?>">Retour</a>
+                            <a class="m-2 btn btn-primary" href="<?= $departement ?>">Departement</a>
                 
                         </div>
                     </div>

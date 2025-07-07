@@ -58,6 +58,9 @@
     </div>
 
 <?php
+
+    $departement = "formulaire_departement.php";
+    
     if(!isset($_GET['result'])){
         $return = "tb_Emp.php";
     }
