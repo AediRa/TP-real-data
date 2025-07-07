@@ -122,14 +122,14 @@
         }
     }
 
-    function getDept($data,$id_dept){
-        $code="SELECT * FROM v_dept_deptEmp  where v_dept_deptEmp.id_dept ='$id_dept'";
+    function getDept($data,$name_dept){
+        $code="SELECT * FROM v_dept_deptEmp  where v_dept_deptEmp.dept_name ='$name_dept'";
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }
 
-    function getlistDept($data,$id_dept){
-        $code="SELECT * FROM departments  where departments.dept_no !='$id_dept'";
+    function getlistDept($data,$name_dept){
+        $code="SELECT * FROM departments  where departments.dept_name !='$name_dept'";
         $resultat = mysqli_query($data, $code);
         return $resultat;
     }

@@ -3,11 +3,17 @@
     session_start();
     include("../INC/fonction.php");
     include("data.php");
-    $nom_dept = $_SESSION['name_dept'];
-    $id_dept =  $_SESSION['id_dept'];
-    $result = getDept($data,$id_dept);
+
+    if(!isset($_GET['namedept'])){
+       $nom_dept = $_SESSION['name_dept']; 
+    }
+    if(isset($_GET['namedept'])){
+        $nom_dept = $_GET['namedept']; 
+    }
+    
+    $result = getDept($data,$nom_dept);
     $donnee = mysqli_fetch_assoc($result);
-    $result2 = getlistDept($data,$id_dept);
+    $result2 = getlistDept($data,$nom_dept);
 ?>
 
 <div class="container-fluid">  
@@ -31,7 +37,7 @@
 
         <div class="col-md-3 m-3 bg-secondary rounded-3 p-4">
 
-                <form action="../INC/traitement/traitement_formulaire.php" method="post">
+                <form action="../INC/traitement/traitement_formulaire_dept.php" method="post">
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Departement</label>
@@ -47,7 +53,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Date de debut</label>
-                        <input type="date" class="form-control" name="agemin" placeholder="22-01-1990">
+                        <input type="date" class="form-control" name="date_debut" placeholder="22-01-1990">
                     </div>
                     
                     <button type="submit" class="btn btn-primary">valider</button>
