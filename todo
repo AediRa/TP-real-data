@@ -1,0 +1,10 @@
+**Version 3**
+- Ajouter un colonne nombre employé sur la liste de departements
+- Créer une page pour afficher une page pour afficher un tableau contenant le nombre d'employé (homme et femme), et le salaire moyen
+
+**Version 4**
+- Aller dans fiche.php
+    - bouton "changer département"
+        - mene vers formulaire_departement.php
+- Aller dans formulaire_departement.php
+    - 

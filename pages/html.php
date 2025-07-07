@@ -50,6 +50,7 @@
                             
                             <a class="m-2 btn btn-primary" href="<?= $return ?>">Retour</a>
                             <a class="m-2 btn btn-primary" href="<?= $departement ?>">Changer de Departement</a>
+                            <a class="m-2 btn btn-primary" href="<?= $d_manager ?>">Devenir Manager</a>
                 
                         </div>
                     </div>

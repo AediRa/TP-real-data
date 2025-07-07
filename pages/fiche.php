@@ -60,6 +60,7 @@
 <?php
 
     $departement = "formulaire_departement.php";
+    $d_manager = "formulaire_manager.php";
     
     if(!isset($_GET['result'])){
         $return = "tb_Emp.php";
