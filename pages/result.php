@@ -94,7 +94,7 @@
     <?php } ?>
 
 <?php
-    $return = "formulaire.php";
+    $return1 = "formulaire.php";
     $contenu = ob_get_clean();
     include("html.php");
 ?>

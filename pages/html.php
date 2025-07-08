@@ -59,6 +59,24 @@
             </nav>
 
         <?php } ?>
+
+        <?php if(isset($return1)) { ?>
+
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    
+                    <div class="collapse navbar-collapse">
+                        <div class="navbar-nav btn-group">
+                            
+                            <a class="m-2 btn btn-primary" href="<?= $return1 ?>">Retour</a>
+                
+                        </div>
+                    </div>
+                    
+                </div>
+            </nav>
+
+        <?php } ?>
     </header>
 
     <main>
