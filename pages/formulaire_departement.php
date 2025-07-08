@@ -44,7 +44,7 @@
 
                         <select name="departement">
                             <?php while($donnee2 = mysqli_fetch_assoc($result2)) { ?>
-                                <option value="<?= $donnee2['dept_name'] ?>">
+                                <option value="<?= $donnee2['dept_no'] ?>">
                                     <?= $donnee2['dept_name'] ?>
                                 </option>
                             <?php } ?>
