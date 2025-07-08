@@ -17,7 +17,7 @@
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
 </head>
-<body class="body-b">
+<body class="body-b text-bg-dark ">
 
     <header>
         <?php if(isset($nav)) { ?>
@@ -79,13 +79,13 @@
         <?php } ?>
     </header>
 
-    <main>
+    <main class="m-4">
         <div class="container-fluid">
             <?= $content ?>
         </div>
     </main>
 
-    <footer>
+    <footer class="m-4">
         <p>&copy; 2025 4040-4072</p>
     </footer>
 
