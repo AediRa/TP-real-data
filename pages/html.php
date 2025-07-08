@@ -49,8 +49,8 @@
                         <div class="navbar-nav btn-group">
                             
                             <a class="m-2 btn btn-primary" href="<?= $return ?>">Retour</a>
-                            <a class="m-2 btn btn-primary" href="<?= $departement ?>">Changer de Departement</a>
-                            <a class="m-2 btn btn-primary" href="<?= $d_manager ?>">Devenir Manager</a>
+                            <a class="m-2 btn btn-primary" href="formulaire_departement.php">Changer de Departement</a>
+                            <a class="m-2 btn btn-primary" href="formulaire_manager.php">Devenir Manager</a>
                 
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                     <div class="collapse navbar-collapse">
                         <div class="navbar-nav btn-group">
                             
-                            <a class="m-2 btn btn-primary" href="<?= $return1 ?>">Retour</a>
+                            <a class="m-2 btn btn-primary" href="<?= $return ?>">Retour</a>
                 
                         </div>
                     </div>
