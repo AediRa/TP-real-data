@@ -18,6 +18,13 @@
 
 <div class="container-fluid">  
 
+    <?php if(isset($_GET[''])){?>
+        <div class="alert alert-warning" role="alert">
+            <h3><?= "Aucun resultat correspondant"?></h3>
+        </div>
+    <?php }?>
+
+    
         <table class="table">
             <tr>
                 <th>Departement</th>
@@ -32,7 +39,7 @@
     <div class="row p-3">
 
         <div class="col-md-12 m-3">
-            <h5>Formulaire de recherche de departement</h5>
+            <h5>Formulaire de changement de departement</h5>
         </div>
 
         <div class="col-md-3 m-3 bg-secondary rounded-3 p-4">
@@ -62,7 +69,9 @@
 
         </div>
 
-    </div>   
+    </div>
+    
+    
 
 </div>
 

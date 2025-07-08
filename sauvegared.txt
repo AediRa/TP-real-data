@@ -1,77 +1,12 @@
-<?php
-    ob_start();
-    session_start();
-    include("../INC/fonction.php");
-    include("data.php");
-    $name_dept = $_SESSION['name_dept'];
-    $id_dept = $_SESSION['id_dept'];
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Departement</label>
 
-    if(isset($_GET['suivant'])){
-        $val = $_GET['suivant'];
-    }
+    <select name="departement">
+        <?php while($donnee2 = mysqli_fetch_assoc($result2)) { ?>
+            <option value="<?= $donnee2['dept_no'] ?>">
+                <?= $donnee2['dept_name'] ?>
+            </option>
+        <?php } ?>
+    </select>
 
-    if(isset($_GET['precedent'])){
-        $val = $_GET['precedent'];
-    }
-
-    if(!isset($_GET['precedent']) && !isset($_GET['suivant'])){
-        $val = 0;
-    }
-
-    $ligne = getNbEmployees($data,$id_dept);
-    $page = ceil($ligne / 20);
-
-    $result = getEmployees($data,$id_dept,$val);
-    $reste = 20 - (($page*20) - $ligne);
-
-?>
-
-    <div class="container-fluid">
-
-        <h3>List of employees in the <?= $name_dept ?> department </h3>
-
-        <ul>
-            <?php while($donnee = mysqli_fetch_assoc($result)) { ?>
-                <li><a href="../INC/traitement/traitement_emp.php?id_emp=<?= $donnee['emp_no'] ?>"><?= $donnee['first_name'] ?> <?= $donnee['last_name'] ?></a></li>
-            <?php } ?>
-        </ul>
-
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <?php if($val != 0) { ?>
-                <li class="page-item"><a class="page-link" href="tb_Emp.php?suivant=<?= $val - 20 ?>">Previous</a></li>
-                <?php } ?>
-
-                <?php for($i=0;$i<$page;$i++) { ?>
-
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-
-                            <?php if() { ?>
-
-                                <?= $i + 1 ?>
-
-                            <?php } ?>
-
-                        </a>
-                    </li>
-
-                <?php } ?>
-
-                <?php if(($val == 0) || ($val + $reste != $ligne)) { ?>
-                    
-                <li class="page-item"><a class="page-link" href="tb_Emp.php?precedent=<?= $val + 20 ?>">Next</a></li>
-                <?php } ?>
-            </ul>
-        </nav>
-
-        <a href="tb_Department.php">Retour</a>
-    </div>
-
-    <?= $page ?> <?= $ligne ?> <?= $val ?>
-
-<?php
-    $nav="ok";
-    $contenu = ob_get_clean();
-    include("html.php");
-?>
+</div>

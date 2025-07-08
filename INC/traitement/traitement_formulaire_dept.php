@@ -1,6 +1,7 @@
 <?php
     session_start();
     include("../../pages/data.php");
+    include("fonction.php");
     if(isset($_POST['departement']) && isset($_POST['date_debut'])){
         $nom_dep = $_POST['departement'];
         $emp = $_SESSION['id_emp'];
