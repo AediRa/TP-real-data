@@ -4,14 +4,8 @@
     include("../INC/fonction.php");
     include("data.php");
 
-    if(!isset($_GET['namedept'])){
-       $nom_dept = $_SESSION['name_dept']; 
-    }
-    if(isset($_GET['namedept'])){
-        $nom_dept = $_GET['namedept']; 
-    }
-    
-    $result = getDept($data,$nom_dept);
+    $nom_dept = $_SESSION['name_dept']; 
+    $result = getDeptMan($data,$nom_dept);
     $donnee = mysqli_fetch_assoc($result);
     $result2 = getlistDept($data,$nom_dept);
 ?>
@@ -31,8 +25,8 @@
                 <th>Manager</th>
             </tr>
             <tr>
-                <td><?= $nom_dept ?></td>
-                <td><?= getCorrectDate($donnee['from_date']) ?></td>
+                <td><?= $donnee['dept_name'] ?></td>
+                <td><?= $donnee['first_name'] ?> <?= $donnee['last_name'] ?></td>
             </tr>
         </table>
 
