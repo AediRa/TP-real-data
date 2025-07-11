@@ -68,7 +68,7 @@
                     <div class="collapse navbar-collapse">
                         <div class="navbar-nav btn-group">
                             
-                            <a class="m-2 btn btn-primary" href="<?= $return ?>">Retour</a>
+                            <a class="m-2 btn btn-primary" href="<?= $return1 ?>">Retour</a>
                 
                         </div>
                     </div>

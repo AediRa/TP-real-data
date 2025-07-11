@@ -134,6 +134,12 @@
         return $resultat;
     }
 
+    function getlistDept2($data){
+        $code="SELECT * FROM departments";
+        $resultat = mysqli_query($data, $code);
+        return $resultat;
+    }
+
     function getDeptMan($data,$name_dept){
         $code="SELECT * FROM v_dept_deptMan_Emp  where v_dept_deptMan_Emp.dept_name ='$name_dept'";
         $resultat = mysqli_query($data, $code);
