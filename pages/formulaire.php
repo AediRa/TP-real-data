@@ -7,7 +7,7 @@
 
 <div class="container-fluid">  
 
-    <div class="row p-3">
+    <div class="row p-2">
 
         <div class="col-md-12 m-3">
             <h5>Formulaire de recherche d'employe</h5>

@@ -11,8 +11,12 @@
     $sbe = getSalaireByEmploi($data);
 ?>
 
+<h5>Nombre d'employe</h5>
+
 <p>Nombre de femme : <?= getCorrectNb($donnee1['NbF']) ?></p>
 <p>Nombre d'homme : <?= getCorrectNb($donnee2['NbM']) ?></p>
+
+<h5>Salaire moyen pour chaque emploi</h5>
 
 <table class="table">
     <tr>
